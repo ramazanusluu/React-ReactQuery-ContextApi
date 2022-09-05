@@ -3,8 +3,12 @@ import { Link } from "react-router-dom";
 import Sidebar from "../Sidebar";
 import "./style.css";
 
+import { useBasket } from "../../contexts/BasketContext";
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const { items } = useBasket();
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-danger">
@@ -79,12 +83,14 @@ function Navbar() {
             </ul>
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <a className="nav-link active" href="/">
-                  <i className="fa-solid fa-basket-shopping"></i>
-                  <span className="translate-middle badge rounded-pill bg-light text-dark rounded-circle">
-                    0
-                  </span>
-                </a>
+                <Link to="/">
+                  <button className="btn btn-danger fs-6 active">
+                    <i className="fa-solid fa-basket-shopping"></i>
+                    <span className="translate-middle badge rounded-pill bg-light text-dark rounded-circle">
+                      {items.length}
+                    </span>
+                  </button>
+                </Link>
               </li>
             </ul>
           </div>
