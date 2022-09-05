@@ -4,7 +4,7 @@ import "./style.css";
 import { Link } from "react-router-dom";
 
 function ShoppingCard() {
-  const { decrease, increase, items } = useBasket();
+  const { decrease, increase, items, removeFromBasket } = useBasket();
   console.log(items);
   return (
     <>
@@ -86,7 +86,10 @@ function ShoppingCard() {
                           </h6>
                         </td>
                         <td>
-                          <button className="btn btn-outline-danger">
+                          <button
+                            onClick={() => removeFromBasket(item.ID)}
+                            className="btn btn-outline-danger"
+                          >
                             Kaldır
                           </button>
                         </td>

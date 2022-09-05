@@ -20,6 +20,12 @@ const BasketProvider = ({ children }) => {
         : [...items.card, { ...data, count: 1 }],
     });
 
+  const removeFromBasket = (id) =>
+    setItems({
+      ...items,
+      card: items.card.filter((cardItem) => cardItem.ID !== id),
+    });
+
   const increase = (id) => {
     setItems({
       ...items,
@@ -48,6 +54,7 @@ const BasketProvider = ({ children }) => {
     addToBasket,
     increase,
     decrease,
+    removeFromBasket,
   };
 
   return (
