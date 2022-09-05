@@ -100,52 +100,38 @@ function ShoppingCard() {
               </div>
               <div className="col-md-4">
                 <h5>SİPARİŞ ÖZETİ</h5>
-                {items.card.map((item) => (
-                  <div key={item.ID}>
-                    <div>
-                      <i className="fa-solid fa-cart-shopping fs-2"></i>
-                      <span className="fs-6"> Toplam {item.count} ürün</span>
-                    </div>
-                    <div className="total-price mt-3">
-                      <span className="label">Ödenecek Tutar : </span>
-                      <span className="label">
-                        {item.ActualPriceToShowOnScreen * item.count > 1000
-                          ? (item.ActualPriceToShowOnScreen * item.count) / 1000
-                          : item.ActualPriceToShowOnScreen * item.count}{" "}
-                        TL
-                      </span>
-                    </div>
-                    <div className="total-price mt-3">
-                      <span className="label">Ürünler : </span>
-                      <span className="label">
-                        {item.ActualPriceToShowOnScreen * item.count > 1000
-                          ? (item.ActualPriceToShowOnScreen * item.count) / 1000
-                          : item.ActualPriceToShowOnScreen * item.count}{" "}
-                        TL
-                      </span>
-                    </div>
-                    <div className="total-price mt-3">
-                      <span className="label">Kargo Ücreti : </span>
-                      <span className="label">Ücretsiz</span>
-                    </div>
-                    <div>
-                      <h6 className="mt-3 text-muted indirim">
-                        İndirim Kodunuzu Giriniz{" "}
-                        <i className="fa-solid fa-angles-right"></i>
-                      </h6>
-                    </div>
-                    <Link to="/">
-                      <button className="btn btn-danger w-100 my-3">
-                        Ödeme Sayfasına Devam Et
-                      </button>
-                    </Link>
-                    <Link to="/">
-                      <button className="btn btn-dark w-100 my-3">
-                        Alışverişe Devam Et
-                      </button>
-                    </Link>
-                  </div>
-                ))}
+                <div>
+                  <i className="fa-solid fa-cart-shopping fs-2"></i>
+                  <span className="fs-6"> Toplam ürün</span>
+                </div>
+                <div className="total-price mt-3">
+                  <span className="label">Ödenecek Tutar : </span>
+                  <span className="label">tl</span>
+                </div>
+                <div className="total-price mt-3">
+                  <span className="label">Ürünler : </span>
+                  <span className="label">tl</span>
+                </div>
+                <div className="total-price mt-3">
+                  <span className="label">Kargo Ücreti : </span>
+                  <span className="label">Ücretsiz</span>
+                </div>
+                <div>
+                  <h6 className="mt-3 text-muted indirim">
+                    İndirim Kodunuzu Giriniz
+                    <i className="fa-solid fa-angles-right"></i>
+                  </h6>
+                </div>
+                <Link to="/">
+                  <button className="btn btn-danger w-100 my-3">
+                    Ödeme Sayfasına Devam Et
+                  </button>
+                </Link>
+                <Link to="/">
+                  <button className="btn btn-dark w-100 my-3">
+                    Alışverişe Devam Et
+                  </button>
+                </Link>
               </div>
             </>
           )}
