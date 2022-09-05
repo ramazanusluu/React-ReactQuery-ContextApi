@@ -4,6 +4,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Categories from "./pages/Categories";
+import SubCategories from "./pages/SubCategories";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Categories />} />
+        <Route path="/category/:category_id" element={<SubCategories />} />
       </Routes>
     </>
   );
