@@ -9,7 +9,7 @@ function ShoppingCard() {
   return (
     <>
       <div className="card-header"></div>
-      <div className="container">
+      <div className="container my-5">
         <div className="row">
           {items.card.length < 1 && (
             <div>
@@ -58,12 +58,82 @@ function ShoppingCard() {
                         <td>
                           <h5 className="card-item-text">{item.DisplayName}</h5>
                         </td>
+                        <td>
+                          <div className="btn-group">
+                            <button className="btn">-</button>
+                            <button className="btn">{item.count}</button>
+                            <button className="btn ">+</button>
+                          </div>
+                        </td>
+                        <td>
+                          <h6 className="text-danger">
+                            {item.ActualPriceToShowOnScreen * item.count > 1000
+                              ? (item.ActualPriceToShowOnScreen * item.count) /
+                                1000
+                              : item.ActualPriceToShowOnScreen *
+                                item.count}{" "}
+                            TL
+                          </h6>
+                        </td>
+                        <td>
+                          <button className="btn btn-outline-danger">
+                            Kaldır
+                          </button>
+                        </td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-              <div className="col-md-4"></div>
+              <div className="col-md-4">
+                <h5>SİPARİŞ ÖZETİ</h5>
+                {items.card.map((item) => (
+                  <div key={item.ID}>
+                    <div>
+                      <i className="fa-solid fa-cart-shopping fs-2"></i>
+                      <span className="fs-6"> Toplam {item.count} ürün</span>
+                    </div>
+                    <div className="total-price mt-3">
+                      <span className="label">Ödenecek Tutar : </span>
+                      <span className="label">
+                        {item.ActualPriceToShowOnScreen * item.count > 1000
+                          ? (item.ActualPriceToShowOnScreen * item.count) / 1000
+                          : item.ActualPriceToShowOnScreen * item.count}{" "}
+                        TL
+                      </span>
+                    </div>
+                    <div className="total-price mt-3">
+                      <span className="label">Ürünler : </span>
+                      <span className="label">
+                        {item.ActualPriceToShowOnScreen * item.count > 1000
+                          ? (item.ActualPriceToShowOnScreen * item.count) / 1000
+                          : item.ActualPriceToShowOnScreen * item.count}{" "}
+                        TL
+                      </span>
+                    </div>
+                    <div className="total-price mt-3">
+                      <span className="label">Kargo Ücreti : </span>
+                      <span className="label">Ücretsiz</span>
+                    </div>
+                    <div>
+                      <h6 className="mt-3 text-muted indirim">
+                        İndirim Kodunuzu Giriniz{" "}
+                        <i className="fa-solid fa-angles-right"></i>
+                      </h6>
+                    </div>
+                    <Link to="/">
+                      <button className="btn btn-danger w-100 my-3">
+                        Ödeme Sayfasına Devam Et
+                      </button>
+                    </Link>
+                    <Link to="/">
+                      <button className="btn btn-dark w-100 my-3">
+                        Alışverişe Devam Et
+                      </button>
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </>
           )}
         </div>
