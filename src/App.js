@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import Error404 from "./components/Error";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Categories from "./pages/Categories";
@@ -21,6 +22,7 @@ function App() {
           path="/products/:product_id/product-detail/:product"
           element={<ProductDetails />}
         />
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </>
   );
