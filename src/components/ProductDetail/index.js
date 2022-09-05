@@ -1,9 +1,12 @@
 import React from "react";
 import ImageGallery from "react-image-gallery";
-import "./style.css"
+import "./style.css";
+import { useBasket } from "../../contexts/BasketContext";
 
 function ProductDetail({ data }) {
-  console.log(data);
+  const { addToBasket, items } = useBasket();
+  console.log("items", items);
+
   const images = data.Result.ImageSetList[0].ImageList.map((url) => ({
     original: url.Path,
   }));
@@ -55,7 +58,11 @@ function ProductDetail({ data }) {
                   : item.ActualPriceToShowOnScreen}
                 TL
               </h2>
-              <button type="button" className="basket">
+              <button
+                onClick={() => addToBasket(item)}
+                type="button"
+                className="basket"
+              >
                 SEPETE EKLE
               </button>
             </div>

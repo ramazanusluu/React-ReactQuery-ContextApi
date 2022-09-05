@@ -87,7 +87,7 @@ function Navbar() {
                   <button className="btn btn-danger fs-6 active">
                     <i className="fa-solid fa-basket-shopping"></i>
                     <span className="translate-middle badge rounded-pill bg-light text-dark rounded-circle">
-                      {items.length}
+                      {items.card.length}
                     </span>
                   </button>
                 </Link>
