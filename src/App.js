@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Categories from "./pages/Categories";
 import ProductDetails from "./pages/ProductDetails";
 import Products from "./pages/Products";
+import ShoppingCard from "./pages/ShoppingCard";
 import SubCategories from "./pages/SubCategories";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           path="/products/:product_id/product-detail/:product"
           element={<ProductDetails />}
         />
+        <Route path="/card" element={<ShoppingCard />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </>

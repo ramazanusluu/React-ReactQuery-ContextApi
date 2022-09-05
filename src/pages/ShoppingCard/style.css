@@ -1,0 +1,18 @@
+.card-header {
+  width: 100%;
+  display: table;
+  background: #293033;
+  min-height: 130px;
+}
+.card-router:hover {
+  color: #f7272f !important;
+}
+.bilgi {
+  color: #505050;
+}
+.bilgi-span {
+  color: black;
+}
+.card-item-text {
+    font-size: 16px;
+}

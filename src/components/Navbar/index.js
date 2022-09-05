@@ -83,7 +83,7 @@ function Navbar() {
             </ul>
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <Link to="/">
+                <Link to="/card">
                   <button className="btn btn-danger fs-6 active">
                     <i className="fa-solid fa-basket-shopping"></i>
                     <span className="translate-middle badge rounded-pill bg-light text-dark rounded-circle">
