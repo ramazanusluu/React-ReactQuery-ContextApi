@@ -1,0 +1,27 @@
+.sidebar {
+  width: 350px;
+  background-color: #df2027 !important;
+  position: absolute !important;
+  z-index: 1;
+  overflow: auto;
+  color: white !important;
+}
+.category {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.category:hover {
+  color: black;
+}
+.subCategory {
+  color: white;
+  text-decoration: none;
+}
+.subCategory:hover {
+  color: black !important;
+}
+.sidebar ul {
+  margin-top: 0;
+}

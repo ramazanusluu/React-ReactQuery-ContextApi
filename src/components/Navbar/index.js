@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import Sidebar from "../Sidebar/Sidebar";
+import Sidebar from "../Sidebar";
 import "./style.css";
 
 function Navbar() {
@@ -90,7 +90,7 @@ function Navbar() {
           </div>
         </div>
       </nav>
-      {/* {isOpen && <Sidebar />} */}
+      {isOpen && <Sidebar />}
     </div>
   );
 }
