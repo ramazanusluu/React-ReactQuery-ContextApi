@@ -4,7 +4,7 @@ import "./style.css";
 import { Link } from "react-router-dom";
 
 function ShoppingCard() {
-  const { items } = useBasket();
+  const { decrease, increase, items } = useBasket();
   console.log(items);
   return (
     <>
@@ -60,9 +60,19 @@ function ShoppingCard() {
                         </td>
                         <td>
                           <div className="btn-group">
-                            <button className="btn">-</button>
+                            <button
+                              className="btn"
+                              onClick={() => decrease(item.ID)}
+                            >
+                              -
+                            </button>
                             <button className="btn">{item.count}</button>
-                            <button className="btn ">+</button>
+                            <button
+                              className="btn"
+                              onClick={() => increase(item.ID)}
+                            >
+                              +
+                            </button>
                           </div>
                         </td>
                         <td>

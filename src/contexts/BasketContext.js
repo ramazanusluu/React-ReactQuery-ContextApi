@@ -20,10 +20,34 @@ const BasketProvider = ({ children }) => {
         : [...items.card, { ...data, count: 1 }],
     });
 
+  const increase = (id) => {
+    setItems({
+      ...items,
+      card: items.card.map((cardItem) =>
+        cardItem.ID === id
+          ? { ...cardItem, count: cardItem.count + 1 }
+          : cardItem
+      ),
+    });
+  };
+
+  const decrease = (id) => {
+    setItems({
+      ...items,
+      card: items.card.map((cardItem) =>
+        cardItem.ID === id
+          ? { ...cardItem, count: cardItem.count > 1 ? cardItem.count - 1 : 1 }
+          : cardItem
+      ),
+    });
+  };
+
   const values = {
     items,
     setItems,
     addToBasket,
+    increase,
+    decrease,
   };
 
   return (
