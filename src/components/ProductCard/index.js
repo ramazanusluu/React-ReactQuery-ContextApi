@@ -28,7 +28,7 @@ function ProductCard({ item }) {
             <h4 className="fw-bold text-center">
               {item.StrikeThroughPriceToShowOnScreen > 1000
                 ? item.StrikeThroughPriceToShowOnScreen / 1000
-                : item.StrikeThroughPriceToShowOnScreen}{" "}
+                : item.StrikeThroughPriceToShowOnScreen}
               TL
             </h4>
             <div className="text-center my-4">
