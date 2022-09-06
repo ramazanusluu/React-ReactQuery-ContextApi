@@ -61,7 +61,7 @@ function Navbar() {
                   <i className="fa-solid fa-magnifying-glass me-2"></i>
                   Ara
                 </a> */}
-                <Link to="/">
+                <Link to="/search">
                   <button className="btn btn-danger fs-6 active">
                     <i className="fa-solid fa-magnifying-glass me-2"></i>
                     Ara

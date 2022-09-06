@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Categories from "./pages/Categories";
 import ProductDetails from "./pages/ProductDetails";
 import Products from "./pages/Products";
+import Search from "./pages/Search";
 import ShoppingCard from "./pages/ShoppingCard";
 import SubCategories from "./pages/SubCategories";
 
@@ -24,6 +25,7 @@ function App() {
           element={<ProductDetails />}
         />
         <Route path="/card" element={<ShoppingCard />} />
+        <Route path="/search" element={<Search />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </>
