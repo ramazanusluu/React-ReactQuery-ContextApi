@@ -13,7 +13,13 @@ function ShoppingCard() {
     0
   );
 
+  const totalCardCount = items.card.reduce(
+    (total, item) => (total = total + item.count),
+    0
+  );
+
   console.log("totalCardAmount", totalCardAmount);
+  console.log("totalCardCount", totalCardCount);
   return (
     <>
       <div className="card-header"></div>
@@ -110,7 +116,7 @@ function ShoppingCard() {
                 <h5>SİPARİŞ ÖZETİ</h5>
                 <div>
                   <i className="fa-solid fa-cart-shopping fs-2"></i>
-                  <span className="fs-6"> Toplam ürün</span>
+                  <span className="fs-6"> Toplam {totalCardCount} ürün</span>
                 </div>
                 <div className="total-price mt-3">
                   <span className="label">Ödenecek Tutar : </span>
