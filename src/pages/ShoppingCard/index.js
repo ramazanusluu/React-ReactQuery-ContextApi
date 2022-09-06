@@ -6,6 +6,14 @@ import { Link } from "react-router-dom";
 function ShoppingCard() {
   const { decrease, increase, items, removeFromBasket } = useBasket();
   console.log(items);
+
+  const totalCardAmount = items.card.reduce(
+    (total, item) =>
+      (total = total + item.ActualPriceToShowOnScreen * item.count),
+    0
+  );
+
+  console.log("totalCardAmount", totalCardAmount);
   return (
     <>
       <div className="card-header"></div>
@@ -106,11 +114,21 @@ function ShoppingCard() {
                 </div>
                 <div className="total-price mt-3">
                   <span className="label">Ödenecek Tutar : </span>
-                  <span className="label">tl</span>
+                  <span className="label">
+                    {totalCardAmount > 1000
+                      ? totalCardAmount / 1000
+                      : totalCardAmount}{" "}
+                    TL
+                  </span>
                 </div>
                 <div className="total-price mt-3">
                   <span className="label">Ürünler : </span>
-                  <span className="label">tl</span>
+                  <span className="label">
+                    {totalCardAmount > 1000
+                      ? totalCardAmount / 1000
+                      : totalCardAmount}{" "}
+                    TL
+                  </span>
                 </div>
                 <div className="total-price mt-3">
                   <span className="label">Kargo Ücreti : </span>
