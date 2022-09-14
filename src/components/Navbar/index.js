@@ -50,7 +50,10 @@ function Navbar() {
                   Ana Sayfa
                 </a> */}
                 <Link to="/">
-                  <button className="btn btn-danger fs-6 active">
+                  <button
+                    className="btn btn-danger fs-6 active"
+                    onClick={() => setIsOpen(false)}
+                  >
                     <i className="fa-solid fa-house me-2"></i>
                     Ana Sayfa
                   </button>
@@ -68,18 +71,14 @@ function Navbar() {
                   </button>
                 </Link>
               </li>
-              <li className="nav-item">
-                {/* <a className="nav-link active" href="/">
-                  <i className="fa-solid fa-filter me-2"></i>
-                  Filtrele
-                </a> */}
+              {/* <li className="nav-item">
                 <Link to="/">
                   <button className="btn btn-danger fs-6 active">
                     <i className="fa-solid fa-filter me-2"></i>
                     Filtrele
                   </button>
                 </Link>
-              </li>
+              </li> */}
             </ul>
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">

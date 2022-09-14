@@ -16,16 +16,18 @@ function Products() {
   if (error) return "An error has occurred: " + error.message;
 
   console.log(data.Result.ProductList);
+  console.log(data);
 
   return (
     <>
-      <div className="container my-5">
+      {/* <div className="container my-5">
         <div className="row">
           {data.Result.ProductList.map((item, key) => (
             <ProductCard key={key} item={item} />
           ))}
         </div>
-      </div>
+      </div> */}
+      <ProductCard data={data} />
     </>
   );
 }

@@ -17,7 +17,7 @@ const BasketProvider = ({ children }) => {
       });
     }
   }, []);
-  
+
   useEffect(() => {
     localStorage.setItem("basket", JSON.stringify(items));
   }, [items]);
@@ -43,10 +43,12 @@ const BasketProvider = ({ children }) => {
   const increase = (id) => {
     setItems({
       ...items,
-      card: items.card.map((cardItem) =>
-        cardItem.ID === id
-          ? { ...cardItem, count: cardItem.count + 1 }
-          : cardItem
+      card: items.card.map(
+        (cardItem) =>
+          cardItem.ID === id &&
+          cardItem.count < cardItem.SelectionList[0].OptionList[0].Quantity
+            ? { ...cardItem, count: cardItem.count + 1 }
+            : cardItem,
       ),
     });
   };

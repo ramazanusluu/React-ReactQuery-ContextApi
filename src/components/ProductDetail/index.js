@@ -59,7 +59,7 @@ function ProductDetail({ data }) {
                 TL
               </h2>
               <button
-                onClick={() => addToBasket(item)}
+                onClick={() => items.card.length < 3 && addToBasket(item)}
                 type="button"
                 className="basket"
               >
