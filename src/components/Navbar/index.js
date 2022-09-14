@@ -82,6 +82,14 @@ function Navbar() {
             </ul>
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
+                <Link to="/compare">
+                  <button className="btn btn-danger fs-6 active">
+                    <i className="fa-solid fa-code-compare me-2"></i>
+                    Karşılaştır
+                  </button>
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link to="/card">
                   <button className="btn btn-danger fs-6 active">
                     <i className="fa-solid fa-basket-shopping"></i>

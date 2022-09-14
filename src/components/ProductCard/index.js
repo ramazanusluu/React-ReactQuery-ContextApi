@@ -112,11 +112,11 @@ function ProductCard({ data }) {
                         <input
                           type="checkbox"
                           name="check"
-                          id="check"
+                          id={item.ID}
                           className="form-check-input"
                         />
                         <label
-                          htmlFor="check"
+                          htmlFor={item.ID}
                           className="form-check-label text-muted"
                         >
                           Karşılaştır

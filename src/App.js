@@ -5,6 +5,7 @@ import Error404 from "./components/Error";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Categories from "./pages/Categories";
+import Compare from "./pages/Compare";
 import ProductDetails from "./pages/ProductDetails";
 import Products from "./pages/Products";
 import Search from "./pages/Search";
@@ -26,6 +27,7 @@ function App() {
         />
         <Route path="/card" element={<ShoppingCard />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/compare" element={<Compare />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </>
