@@ -1,9 +1,18 @@
 import React from "react";
+import { useCompare } from "../../contexts/CompareContext";
 
 function Compare() {
+  const { compareItems } = useCompare();
+
   return (
     <div>
-      <h1>Compare</h1>
+      {compareItems.map((item, key) => (
+        <div key={key}>
+          <h4>
+            {item.DisplayName}-{item.ProductType}
+          </h4>
+        </div>
+      ))}
     </div>
   );
 }

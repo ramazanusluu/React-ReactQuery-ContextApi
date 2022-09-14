@@ -20,14 +20,14 @@ function Products() {
 
   return (
     <>
-      {/* <div className="container my-5">
+      <div className="container my-5">
         <div className="row">
           {data.Result.ProductList.map((item, key) => (
             <ProductCard key={key} item={item} />
           ))}
         </div>
-      </div> */}
-      <ProductCard data={data} />
+      </div>
+      {/* <ProductCard data={data} /> */}
     </>
   );
 }

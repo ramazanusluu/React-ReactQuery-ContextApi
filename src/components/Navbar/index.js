@@ -4,11 +4,14 @@ import Sidebar from "../Sidebar";
 import "./style.css";
 
 import { useBasket } from "../../contexts/BasketContext";
+import { useCompare } from "../../contexts/CompareContext";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const { items } = useBasket();
+  const { compareItems } = useCompare();
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-danger">
@@ -81,14 +84,16 @@ function Navbar() {
               </li> */}
             </ul>
             <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <Link to="/compare">
-                  <button className="btn btn-danger fs-6 active">
-                    <i className="fa-solid fa-code-compare me-2"></i>
-                    Karşılaştır
-                  </button>
-                </Link>
-              </li>
+              {compareItems.length > 0 && (
+                <li className="nav-item">
+                  <Link to="/compare">
+                    <button className="btn btn-danger fs-6 active">
+                      <i className="fa-solid fa-code-compare me-2"></i>
+                      Karşılaştır ({compareItems.length})
+                    </button>
+                  </Link>
+                </li>
+              )}
               <li className="nav-item">
                 <Link to="/card">
                   <button className="btn btn-danger fs-6 active">

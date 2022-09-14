@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { BasketProvider } from "./contexts/BasketContext";
+import { CompareProvider } from "./contexts/CompareContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,9 +23,11 @@ root.render(
   <>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <BasketProvider>
-          <App />
-        </BasketProvider>
+        <CompareProvider>
+          <BasketProvider>
+            <App />
+          </BasketProvider>
+        </CompareProvider>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
