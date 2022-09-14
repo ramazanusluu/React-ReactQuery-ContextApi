@@ -14,7 +14,7 @@ const CompareProvider = ({ children }) => {
     const itemIndex = compareItems.findIndex(
       (items) => items.ProductType !== item.ProductType
     );
-    if (itemIndex == -1) {
+    if (itemIndex === -1) {
       setCompareItems((compareItems) => [item, ...compareItems]);
     } else {
       setCompareItems([]);
